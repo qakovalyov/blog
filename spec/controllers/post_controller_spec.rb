@@ -22,11 +22,11 @@ describe PostsController do
     end
 
     it 'updates post' do
-      put :update, id: @post.id, post: {title: '3', body: '4'}
-    end
+      put :update, id: @post.id, post: { title: '3', body: '4' }
 
-    @post.reload
-    expect(@post.title).to eq '3'
-    expect(@post.body).to eq '4'
+      @post.reload
+      expect(@post.title).to eq '3'
+      expect(@post.body).to eq '4'
+    end
   end
 end
