@@ -6,8 +6,8 @@ describe PostsController do
       expect(Post.all.count).to eq 0
     end
 
-    it 'create post' do
-      post :create, { post: {title: 'First post', body: 'hello world'} }
+    it 'creates post' do
+      post :create, { post: { title: 'First post', body: 'hello world' } }
 
       expect(Post.all.count).to eq 1
       post = Post.first
