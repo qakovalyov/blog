@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comment =  Comment.new
+    @comment = Comment.new
   end
 
   def new
@@ -27,8 +27,9 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
+
     if @post.update_attributes(post_params)
-      redirect_to posts_path(@post)
+      redirect_to post_path(@post)
     else
       render :edit
     end
@@ -45,7 +46,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :user_id)
   end
-
 end

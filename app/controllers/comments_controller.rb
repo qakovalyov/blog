@@ -5,13 +5,13 @@ class CommentsController < ApplicationController
       redirect_to post_path(@comment.post)
     else
       @post = @comment.post
-      render controller: 'posts', action: 'show', id: @comment.post_id
+      render 'posts/show', id: @post.id
     end
   end
 
   private
 
   def comment_params
-    params.require(:comment).permit(:body, :post_id)
+    params.require(:comment).permit(:body, :post_id, :user_id)
   end
 end

@@ -1,5 +1,5 @@
 Given /^I am on posts page$/ do
-visit '/posts'
+  visit '/posts'
 end
 
 When /^I follow "create new post"$/ do
@@ -12,7 +12,7 @@ When /^I fill post form$/ do
 end
 
 And /^I submit posts form$/ do
-click_button 'Create post'
+  click_button 'Create post'
 end
 
 Then /^I should be on posts page$/ do
@@ -28,7 +28,7 @@ And /^I should see my new post$/ do
 end
 
 Given /^I am on post page$/ do
-  post = Post.create(title: 'a', body: 'b')
+  post = Post.create!(title: 'a', body: 'b', user_id: User.last.id)
 
   visit post_path(post)
 end

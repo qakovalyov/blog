@@ -12,7 +12,6 @@ gem 'devise'
 group :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
-  gem 'cucumber'
   gem 'cucumber-rails', require: false
   gem 'selenium-webdriver'
   gem 'capybara'

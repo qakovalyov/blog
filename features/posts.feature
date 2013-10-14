@@ -1,11 +1,16 @@
 Feature: Manage posts
 
-Scenario: Create posts
-  Given I am on posts page
-  When I follow "create new post"
+  @javascript
+  Scenario: Create posts
+    Given I am not authenticated
+    When I log in
 
-  When I fill post form
-  And I submit posts form
+    Given I am on posts page
+    When I follow "create new post"
 
-  Then I should be on posts page
-  And I should see my new post
+    When I fill post form
+    And I submit posts form
+
+    Then I should be on posts page
+    And I should see my new post
+
